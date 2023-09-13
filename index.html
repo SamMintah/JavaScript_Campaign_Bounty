@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Management</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Bank Account Management</h1>
+    <div class="container">
+            <div class="account-form">
+                <h2>Account Information</h2>
+                <form id="account-form">
+                    <label for="account-holder">Account Holder:</label>
+                    <input type="text" id="account-holder" required>
+                    <label for="initial-balance">Initial Balance:</label>
+                    <input type="number" id="initial-balance" required>
+                    <label for="account-type">Account Type:</label>
+                    <select id="account-type" required>
+                        <option value="Checking">Checking</option>
+                        <option value="Savings">Savings</option>
+                    </select>
+                </form>
+            </div>        
+        <div class="account-actions">
+            <h2>Account Actions</h2>
+            <form id="action-form">
+                <label for="action">Select Action:</label>
+                <select id="action" required>
+                    <option value="Deposit">Deposit</option>
+                    <option value="Withdraw">Withdraw</option>
+                    <option value="Check Balance">Check Balance</option>
+                </select>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" required>
+                <button type="button" onclick="performAction()">Submit</button>
+            </form>
+        </div>
+        <div id="action-result" class="account-actions">
+            <h3>Action Result:</h3>
+            <div id="deposit-result" class="result-item">
+                <!-- Display deposit-specific results here -->
+            </div>
+            <div id="withdraw-result" class="result-item">
+                <!-- Display withdraw-specific results here -->
+            </div>
+            <div id="balance-result" class="result-item">
+                <!-- Display balance-specific results here -->
+            </div>
+            <div id="invalid-action-result" class="result-item">
+                <!-- Display results for invalid actions here -->
+            </div>
+        </div>
+    </div>
+   
+    <script src="script.js"></script>
+</body>
+</html>
