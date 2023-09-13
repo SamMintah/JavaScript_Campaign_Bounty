@@ -1,13 +1,16 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
 }
 
 .container {
     display: flex;
-    flex-direction: column; /* Change to column layout */
+    flex-direction:row; 
     justify-content: space-between;
-    align-items: center; /* Center items horizontally */
+    align-items: center; 
     padding: 20px;
 }
 
@@ -17,7 +20,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 40%;
-    margin-bottom: 20px; /* Add margin to separate the cards */
+    margin-bottom: 20px; 
 }
 .action-result{
     background-color: #fff;

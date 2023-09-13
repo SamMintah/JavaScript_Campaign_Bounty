@@ -19,12 +19,23 @@ class BankAccount {
     }
 }
 
+function createAccount() {
+    const accountHolder = document.getElementById("account-holder").value;
+    const initialBalance = parseFloat(document.getElementById("initial-balance").value);
+    const accountType = document.getElementById("account-type").value;
+
+    const account = new BankAccount(accountHolder, initialBalance, accountType);
+    accounts.push(account);
+
+    document.getElementById("creation-result").innerHTML = ` ${accountType} Account created for ${accountHolder}`;
+}
+
 function performAction() {
     const action = document.getElementById("action").value;
     const amount = parseFloat(document.getElementById("amount").value);
-
+    
     try {
-        const account = accounts[0]; 
+        const account = accounts[0]; // For simplicity, assume only one account exists
 
         switch (action) {
             case "Deposit":
@@ -36,12 +47,9 @@ function performAction() {
                 document.getElementById("withdraw-result").innerHTML = `Withdrawn $${amount}`;
                 break;
             case "Check Balance":
-                // Update account information
-                document.getElementById("account-holder-info").textContent = account.accountHolder;
-                document.getElementById("account-type-info").textContent = account.accountType;
-                document.getElementById("balance-info").textContent = account.balance;
-                
-                // Clear action-specific results
+                document.getElementById("account-holder-info").innerHTML = account.accountHolder;
+                document.getElementById("account-type-info").innerHTML = account.accountType;
+                document.getElementById("balance-info").innerHTML = account.balance;
                 document.getElementById("deposit-result").innerHTML = "";
                 document.getElementById("withdraw-result").innerHTML = "";
                 document.getElementById("invalid-action-result").innerHTML = "";
